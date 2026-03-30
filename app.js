@@ -1,6 +1,6 @@
 let gameSeq = [];
 let userSep = [];
-
+let startbtn = document.querySelector(".startbtn");
 let btns = ["blue", "yellow", "orange", "red"];
 let h2 = document.querySelector("h2");
 
@@ -12,6 +12,16 @@ let h3 = document.querySelector("h3");
 //When pressed Enter starts the Game with level 1
 document.addEventListener("keypress", (event) => {
     if(event.code == 'Enter' && start == false) {
+        start = true;
+        console.log('game started')
+        setTimeout(levelUp, 500)
+        flag = true;
+    }
+
+})
+
+startbtn.addEventListener("click", (event) => {
+    if(event.pointerType == 'touch' && start == false) {
         start = true;
         console.log('game started')
         setTimeout(levelUp, 500)
